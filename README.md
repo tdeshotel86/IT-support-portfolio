@@ -15,3 +15,12 @@ Key Technical Implementation & Troubleshooting:
 <img width="1911" height="1028" alt="Screenshot 2026-09-07 211044" src="https://github.com/user-attachments/assets/1615f8ee-3d0e-48f4-a924-1834927cdea5" />
 <img width="1224" height="832" alt="Screenshot 2026-09-07 212431" src="https://github.com/user-attachments/assets/aad589c3-b83e-4331-a8c8-a45482fabb5e" />
 
+## Production Infrastructure & Web Operations: Total Care Squad
+**Live URL:** [totalcaresquad.com](https://totalcaresquad.com)  
+**Role:** Systems & Operations Lead / Web Administrator  
+
+### Technical Implementation & Infrastructure
+* **Domain & DNS Management:** Architected DNS zone configurations including A, CNAME, and MX records to route traffic and establish production email services.
+* **Email Security & Deliverability:** Configured and validated SPF, DKIM, and DMARC records to secure corporate domain identity, mitigate spoofing risks, and optimize inbound/outbound deliverability.
+* **Security & Availability:** Enforced automated HTTPS/TLS encryption certificates to protect user session confidentiality and maintain web security compliance.
+* **Service Lifecycle:** Managed end-to-end site staging, deployment, uptime monitoring, and client-facing service catalog documentation.
