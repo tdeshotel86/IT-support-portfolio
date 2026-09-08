@@ -8,9 +8,10 @@ Key Technical Implementation & Troubleshooting:
 • Directory Architecture: Designed an enterprise OU hierarchy (CorpEnterprise) to isolate departments, administrative principals, and workstations (CL-02) from unmanaged default containers.
 • Role-Based Access Control (RBAC): Automated departmental Global Security Groups (SG-IT-Staff, SG-HR-Staff) and provisioned user accounts (jdoe, asmith). Diagnosed LSASS Kerberos PAC token generation constraints versus service ticket flushes (klist purge).
 • Storage Security & Empirical Validation: Configured an enterprise SMB file share on DC-01 with open share permissions restricted by granular NTFS DACLs. Proved least privilege using empirical testing: validated read/modify/write access for IT personnel and verified negative access control (Access Denied) for unauthorized departmental accounts.
-<img width="1224" height="832" alt="Screenshot 2026-09-07 212431" src="https://github.com/user-attachments/assets/f8651b7d-44e6-4933-8071-9ae41392bc54" />
-<img width="1911" height="1028" alt="Screenshot 2026-09-07 211044" src="https://github.com/user-attachments/assets/ce9aa0ad-c019-48ce-827e-85fe8a092362" />
-<img width="1028" height="758" alt="Screenshot 2026-09-07 205026" src="https://github.com/user-attachments/assets/5a5ec5da-cdb1-4a90-b41e-20af6e40a47a" />
-<img width="1005" height="676" alt="Screenshot 2026-09-06 215631" src="https://github.com/user-attachments/assets/9e48f67d-d622-44a6-9819-823e8937c0ae" />
-<img width="1044" height="757" alt="Screenshot 2026-09-06 153732" src="https://github.com/user-attachments/assets/a9852cd2-4d81-49ab-bba2-edab507cfb0d" />
-<img width="1036" height="771" alt="Screenshot 2026-09-06 140331" src="https://github.com/user-attachments/assets/6db18d2b-1207-4fd2-bd96-01612bae7cdf" />
+<img width="1036" height="771" alt="Screenshot 2026-09-06 140331" src="https://github.com/user-attachments/assets/5894077d-5adc-4431-ae9a-9921f22c54ea" />
+<img width="1044" height="757" alt="Screenshot 2026-09-06 153732" src="https://github.com/user-attachments/assets/736bc19d-bc01-4952-bde1-83e478bfc38d" />
+<img width="1005" height="676" alt="Screenshot 2026-09-06 215631" src="https://github.com/user-attachments/assets/6913ca77-d581-4f48-9d30-bdeece2e1cc9" />
+<img width="1028" height="758" alt="Screenshot 2026-09-07 205026" src="https://github.com/user-attachments/assets/a750a9f3-e724-4d90-b99f-1e2fa3401ffd" />
+<img width="1911" height="1028" alt="Screenshot 2026-09-07 211044" src="https://github.com/user-attachments/assets/1615f8ee-3d0e-48f4-a924-1834927cdea5" />
+<img width="1224" height="832" alt="Screenshot 2026-09-07 212431" src="https://github.com/user-attachments/assets/aad589c3-b83e-4331-a8c8-a45482fabb5e" />
+
