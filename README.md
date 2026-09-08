@@ -36,8 +36,4 @@ Key Technical Implementation & Troubleshooting:
   * **Automated Dispatch:** Dispatches formatted incident tickets directly to technical dispatch via secure SMTP without third-party middleware.
   * **High-Availability Fault Tolerance:** Implements model cascade fallbacks to handle API rate limits (429) and upstream server capacity spikes (503).
 
-<iframe
-  src="https://totalcaresquad-receptionist.streamlit.app/?embed=true"
-  height="700"
-  style="width:100%; border:none; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
-></iframe>
+
