@@ -36,4 +36,7 @@ Key Technical Implementation & Troubleshooting:
   * **Automated Dispatch:** Dispatches formatted incident tickets directly to technical dispatch via secure SMTP without third-party middleware.
   * **High-Availability Fault Tolerance:** Implements model cascade fallbacks to handle API rate limits (429) and upstream server capacity spikes (503).
 
+<img width="1899" height="995" alt="Screenshot 2026-09-08 170213" src="https://github.com/user-attachments/assets/a32d47b4-ed7a-476b-8ed5-3337e846ee65" />
+<img width="1882" height="998" alt="Screenshot 2026-09-08 164305" src="https://github.com/user-attachments/assets/b78e7580-5eef-4f96-b833-4d4c1909d5f2" />
+
 
