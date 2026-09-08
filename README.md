@@ -24,3 +24,14 @@ Key Technical Implementation & Troubleshooting:
 * **Email Security & Deliverability:** Configured and validated SPF, DKIM, and DMARC records to secure corporate domain identity, mitigate spoofing risks, and optimize inbound/outbound deliverability.
 * **Security & Availability:** Enforced automated HTTPS/TLS encryption certificates to protect user session confidentiality and maintain web security compliance.
 * **Service Lifecycle:** Managed end-to-end site staging, deployment, uptime monitoring, and client-facing service catalog documentation.
+
+
+### 🤖 Autonomous AI IT Receptionist & Intake Portal ("Nico")
+* **Live Interactive Deployment:** [Total Care Squad Receptionist](https://totalcaresquad-receptionist.streamlit.app)
+* **Source Code:** [github.com/tdeshotel86/tcs-ai-receptionist](https://github.com/tdeshotel86/tcs-ai-receptionist)
+* **Architecture:** Streamlit Cloud | Python | Google GenAI SDK (`gemini-2.0-flash`) | SMTP Automation
+* **Key Features:**
+  * **Automated Tier-1 Intake:** Triages requests across 5 technical service tracks (Cybersecurity, Surveillance Installation, Custom Web, IT Troubleshooting, and AI Receptionist Setup).
+  * **Structured Function Calling:** Translates unstructured client chat into typed schemas (`FunctionDeclaration`) for automated dispatch.
+  * **Automated Dispatch:** Dispatches formatted incident tickets directly to technical dispatch via secure SMTP without third-party middleware.
+  * **High-Availability Fault Tolerance:** Implements model cascade fallbacks to handle API rate limits (429) and upstream server capacity spikes (503).
