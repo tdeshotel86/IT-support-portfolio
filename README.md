@@ -40,3 +40,8 @@ Key Technical Implementation & Troubleshooting:
 <img width="1882" height="998" alt="Screenshot 2026-09-08 164305" src="https://github.com/user-attachments/assets/b78e7580-5eef-4f96-b833-4d4c1909d5f2" />
 
 
+[SOP-mfa-reset.docx](https://github.com/user-attachments/files/31989519/SOP-mfa-reset.docx)
+[SOP-vpn-dianostics.docx](https://github.com/user-attachments/files/31989513/SOP-vpn-dianostics.docx)
+[SOP-endpoint-isolation.docx](https://github.com/user-attachments/files/31989511/SOP-endpoint-isolation.docx)
+[SOP-print-spooler.docx](https://github.com/user-attachments/files/31989505/SOP-print-spooler.docx)
+
