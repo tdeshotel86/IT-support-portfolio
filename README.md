@@ -84,3 +84,56 @@ Administrative Scripting: Applied process termination and file-management cmdlet
 <img width="1022" height="770" alt="Screenshot 2026-09-16 121051" src="https://github.com/user-attachments/assets/9978f13c-1059-4ce8-a7de-54d8ffd69d76" />
 
 
+Incident & Lab Documentation: TCP/IP & DHCP Network Stack Recovery
+Role: Tier I Technical Support Specialist
+
+System / Target: Oracle VirtualBox 7.x | Guest VM: CL-02 (Windows 11 Enterprise 64-bit)
+
+Environment: Isolated Active Directory Lab (LabNetwork)
+
+1. Issue Summary & Initial Symptoms
+Domain Authentication Failure: Administrative UAC elevation failed with the error “We can't sign you in with this credential because your domain isn't available” when attempting to authenticate against CORP\Admin.
+
+DHCP Command Failure: Running ipconfig /release or ipconfig /renew returned a critical system error: “The operation failed as no adapter is in the state permissible for this operation.”
+
+Visual Indicators: Network stack communication was entirely severed, preventing access to the local domain controller and external resources.
+
+2. Root Cause Analysis (RCA)
+Disabled Link State: The guest operating system's virtual Ethernet adapter was in a disabled or disconnected physical state (Status: Disconnected), preventing Windows from processing IP configuration commands or broadcasting DHCP requests.
+
+Hypervisor-Guest Desync: Loss of network connectivity directly blocked Active Directory domain trust verification during administrative operations.
+
+3. Step-by-Step Resolution & Commands
+Hypervisor Adapter Verification: Confirmed VM Adapter 1 was properly attached to the designated LabNetwork NAT scope in VirtualBox settings.
+
+Adapter State Diagnostics (PowerShell): Launched PowerShell as Administrator and queried the local interface status:
+
+PowerShell
+Get-NetAdapter
+(Diagnostic finding: Adapter interface was present via Intel PRO/1000 MT Desktop Adapter but required activation).
+
+Interface Activation: Force-enabled the network adapter interface to restore physical link state:
+
+PowerShell
+Enable-NetAdapter -Name "Ethernet" -Confirm:$false
+DHCP Lease Renewal: Executed the IP configuration renewal utility to request a fresh lease from the virtual DHCP server:
+
+PowerShell
+ipconfig /renew
+Verification Result: The adapter successfully negotiated a dynamic IPv4 configuration (192.168.10.4), established a valid subnet mask (255.255.255.0), and restored default gateway routing (192.168.10.1).
+
+4. Core Competencies Demonstrated
+PowerShell Networking Cmdlets: Utilized Get-NetAdapter and Enable-NetAdapter to diagnose and programmatically recover interface link states.
+
+TCP/IP & DHCP Troubleshooting: Resolved enterprise network failure states, corrected adapter state blocks, and validated IP lease acquisition.
+
+Active Directory Environment Troubleshooting: Correlated local network reachability failures with domain credential authentication errors.
+<img width="1912" height="1027" alt="Screenshot 2026-09-16 122444" src="https://github.com/user-attachments/assets/e6d261ee-c730-46e0-a44f-9443bf29904f" />
+<img width="1891" height="1031" alt="Screenshot 2026-09-16 122502" src="https://github.com/user-attachments/assets/152bea7c-daf4-48dd-bc19-fa7f557560e0" />
+<img width="1900" height="1030" alt="Screenshot 2026-09-16 122520" src="https://github.com/user-attachments/assets/6400f32e-80e6-4e50-b6c6-297775e83005" />
+<img width="1025" height="767" alt="Screenshot 2026-09-16 123015" src="https://github.com/user-attachments/assets/d6a47d40-b0ed-48b3-981b-6c4491fc3b8d" />
+<img width="1020" height="768" alt="Screenshot 2026-09-16 123219" src="https://github.com/user-attachments/assets/617a9baa-1f6a-4979-80df-3cdb7725d191" />
+<img width="1020" height="770" alt="Screenshot 2026-09-16 123439" src="https://github.com/user-attachments/assets/2f1d05e5-4c46-48d1-a144-8f6930d8d46c" />
+<img width="1020" height="768" alt="Screenshot 2026-09-16 124207" src="https://github.com/user-attachments/assets/0ddb5f30-cf48-4e6a-95da-fe4286806f37" />
+<img width="1038" height="782" alt="Screenshot 2026-09-16 124814" src="https://github.com/user-attachments/assets/75730723-a64e-445d-bf32-7c0a05498fc2" />
+<img width="1031" height="772" alt="Screenshot 2026-09-16 125225" src="https://github.com/user-attachments/assets/28565491-2f64-42ea-af74-1fecb6db19c4" />
