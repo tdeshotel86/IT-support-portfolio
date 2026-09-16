@@ -40,4 +40,47 @@ Key Technical Implementation & Troubleshooting:
 <img width="1882" height="998" alt="Screenshot 2026-09-08 164305" src="https://github.com/user-attachments/assets/b78e7580-5eef-4f96-b833-4d4c1909d5f2" />
 
 
+Incident & Lab Documentation: Server Manager Cache Corruption & GUI Fault
+Role: Tier I/II Technical Support Specialist
+
+System / Target: Oracle VirtualBox 7.x | Guest VM: DC-01 (Windows Server Active Directory Domain Controller)
+
+Environment: Isolated Active Directory Lab (LabNetwork)
+
+1. Issue Summary & Initial Symptoms
+Application Startup Failure: Upon logging into the Windows Server GUI, Server Manager launched automatically but immediately threw a critical pop-up error dialog: “Server Manager cannot load the server list. Click OK to reset the server list and continue.”
+
+
+Persistent Error Loop: Clicking "OK" temporarily cleared the dialogue, but restarting Server Manager or rebooting the server caused the error loop to repeat indefinitely.
+
+Management Impairment: The dashboard failed to poll local and remote server roles, rendering Server Manager unable to display server health, event logs, or manage Active Directory services.
+
+2. Root Cause Analysis (RCA)
+XML Cache Corruption: The local user profile's XML configuration file (ServerList.xml) responsible for tracking managed servers became corrupted, truncated, or malformed.
+
+Trigger Mechanism: This typically occurs due to an unexpected power state change, virtual machine save-state failure, or an incomplete write operation while Server Manager was open.
+
+File Path: The corrupted configuration file was isolated to the profile path:
+C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\ServerManager\ServerList.xml
+
+3. Step-by-Step Resolution & Workarounds
+GUI Reset Alternative: Selected OK on the error prompt to instruct Server Manager to automatically overwrite and reset the corrupted XML file to a fresh default state.
+
+Administrative PowerShell Clean-Up: Opened PowerShell as an Administrator and executed automated cleanup scripts to clear hung processes and purge the corrupted cache file:
+
+PowerShell
+Get-Process ServerManager -ErrorAction SilentlyContinue | Stop-Process -Force
+Remove-Item -Path "$env:APPDATA\Microsoft\Windows\ServerManager\ServerList.xml" -Force -ErrorAction SilentlyContinue
+Start-Process -FilePath "$env:SystemRoot\System32\ServerManager.exe" -WindowStyle Maximized
+Verification: Observed that Server Manager generated a fresh, uncorrupted XML file upon launch, bypassed the error loop, and successfully resumed polling local server roles.
+
+4. Core Competencies Demonstrated
+Windows Server Administration: Diagnosed and resolved Microsoft Management Console (MMC) and dashboard-level corruption on an Active Directory Domain Controller.
+
+File System & Profile Troubleshooting: Located user-specific AppData configurations and successfully cleared application state caches via PowerShell.
+
+Administrative Scripting: Applied process termination and file-management cmdlets to quickly remediate software faults without requiring an OS reinstall.
+<img width="406" height="230" alt="Screenshot 2026-09-16 115508" src="https://github.com/user-attachments/assets/2d07dc59-88a4-407b-a3c2-a149216d3041" />
+<img width="1022" height="770" alt="Screenshot 2026-09-16 121051" src="https://github.com/user-attachments/assets/9978f13c-1059-4ce8-a7de-54d8ffd69d76" />
+
 
