@@ -139,23 +139,22 @@ Active Directory Environment Troubleshooting: Correlated local network reachabil
 <img width="1031" height="772" alt="Screenshot 2026-09-16 125225" src="https://github.com/user-attachments/assets/28565491-2f64-42ea-af74-1fecb6db19c4" />
 
 
-Python Scripting & Developer Workstation Setup (SNHU IT 140)
+## Python Scripting & Developer Workstation Setup (SNHU IT 140)
+**Course:** IT 140 – Introduction to Scripting, Southern New Hampshire University  
+**Project:** Module Two – Software Development Introduction (Grade: 35/35)  
+**Stack:** Python 3.14 | Visual Studio Code | Git | GitHub CLI (`gh`) | Git Bash | PowerShell
 
-Course: IT 140 – Introduction to Scripting, Southern New Hampshire University
-Project: Module Two – Software Development Introduction (Grade: 35/35)
-Stack: Python 3.14 | Visual Studio Code | Git | GitHub CLI (gh) | Git Bash | PowerShell
+### Project Summary
+Built a Python command-line program that collects user input, converts data types, and calculates a birth year from the system clock (`datetime.date.today().year`) instead of a hardcoded value, so the script stays accurate in any year. Followed the Software Development Life Cycle (analysis, design, construction, testing, debugging) with a documented module docstring, a `main()` entry point, and a `__name__ == "__main__"` guard. Source code is kept in a private course repository under SNHU academic integrity guidelines.
 
-Project Summary
+### Workstation Provisioning & Troubleshooting
+* **Toolchain Deployment:** Diagnosed a missing GitHub CLI (`gh: command not found`) and deployed it with the Windows Package Manager (`winget install --id GitHub.cli`), then re-initialized the shell session so the updated PATH loaded.
+* **Identity & Authentication:** Authenticated the GitHub CLI using the OAuth browser device-code flow over HTTPS, configured Git as a credential helper (`gh auth setup-git`), and set the global Git commit identity (`user.name` / `user.email`).
+* **Shell Input Fault Isolation:** Traced a recurring `No such file or directory` error to an invisible C1 control character (`\302\233`) injected ahead of the `~` path shortcut during paste operations; resolved it by substituting the `$HOME` environment variable.
+* **IDE Security Controls:** Cleared VS Code Workspace Trust (Restricted Mode) for the repository root to allow code execution, and installed the Microsoft Python and Python Debugger extensions to enable the interpreter and the Run and Debug workflow.
+* **Version Control & CI Validation:** Created a private repository from the course template with `gh repo create --template`, then staged, committed, and pushed changes. The push triggered a GitHub Actions workflow that validated the program automatically (passing check).
 
-Built a Python command-line program that collects user input, converts data types, and calculates a birth year from the system clock (datetime.date.today().year) instead of a hardcoded value, so the script stays accurate in any year. Followed the Software Development Life Cycle (analysis, design, construction, testing, debugging) with a documented module docstring, a main() entry point, and a __name__ == "__main__" guard. Source code is kept in a private course repository under SNHU academic integrity guidelines.
-
-Workstation Provisioning & Troubleshooting
-Toolchain Deployment: Diagnosed a missing GitHub CLI (gh: command not found) and deployed it with the Windows Package Manager (winget install --id GitHub.cli), then re-initialized the shell session so the updated PATH loaded.
-Identity & Authentication: Authenticated the GitHub CLI using the OAuth browser device-code flow over HTTPS, configured Git as a credential helper (gh auth setup-git), and set the global Git commit identity (user.name / user.email).
-Shell Input Fault Isolation: Traced a recurring No such file or directory error to an invisible C1 control character (\302\233) injected ahead of the ~ path shortcut during paste operations; resolved it by substituting the $HOME environment variable.
-IDE Security Controls: Cleared VS Code Workspace Trust (Restricted Mode) for the repository root to allow code execution, and installed the Microsoft Python and Python Debugger extensions to enable the interpreter and the Run and Debug workflow.
-Version Control & CI Validation: Created a private repository from the course template with gh repo create --template, then staged, committed, and pushed changes. The push triggered a GitHub Actions workflow that validated the program automatically (passing check).
-Core Competencies Demonstrated
-Python Fundamentals: User input, type conversion (int()), arithmetic, f-string output formatting, and use of the standard library.
-Developer Environment Administration: CLI tool installation, PATH and shell troubleshooting, and IDE configuration on Windows.
-Git & GitHub Workflow: Repository creation from templates, authentication, commits, pushes, and reading CI status.
+### Core Competencies Demonstrated
+* **Python Fundamentals:** User input, type conversion (`int()`), arithmetic, f-string output formatting, and use of the standard library.
+* **Developer Environment Administration:** CLI tool installation, PATH and shell troubleshooting, and IDE configuration on Windows.
+* **Git & GitHub Workflow:** Repository creation from templates, authentication, commits, pushes, and reading CI status.
