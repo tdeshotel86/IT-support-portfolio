@@ -62,3 +62,7 @@ Verify full end-to-end tunnel communication by testing an essential internal ser
 ### Step 7: Documentation & Ticket Closure
 * Log the user's ISP details, client software version, and specific resolution steps (e.g., driver reinstallation, winsock reset, DNS flush) in the internal ticketing notes.
 * Update ticket status to **Resolved** and confirm stability with the end user.
+
+---
+
+[← SOP Index](index.md) · [← Back to portfolio](../README.md)

@@ -57,3 +57,7 @@ Access **Active Directory / Microsoft Entra ID** immediately:
   * Exported socket and process capture files
   * Suspect email headers or downloaded file samples (quarantined in password-protected ZIP)
 * Maintain chain of custody on the physical workstation until re-imaging approval is granted.
+
+---
+
+[← SOP Index](index.md) · [← Back to portfolio](../README.md)

@@ -55,3 +55,7 @@ Establishes a mandatory verification procedure for resetting Multi-Factor Authen
 * Update ticket status to **Resolved** and notify the user.
 
 
+
+---
+
+[← SOP Index](index.md) · [← Back to portfolio](../README.md)
