@@ -62,3 +62,7 @@ Invoke-CimMethod -InputObject $DefaultPrinter -MethodName PrintTestPage
 * Confirm physical page output and quality with the end user.
 * Document the removed driver version, replacement driver installed, and queue remediation steps in the ticket notes.
 * Update ticket status to **Resolved**.
+
+---
+
+[← SOP Index](index.md) · [← Back to portfolio](../README.md)

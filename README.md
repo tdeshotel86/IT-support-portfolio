@@ -1,4 +1,18 @@
 # IT-support-portfolio
+
+## 📘 Standard Operating Procedures (SOPs)
+Service desk runbooks written for Tier I/II support teams. Each SOP defines its scope, the security directives that must be followed, and a numbered execution workflow with the commands to run.
+
+| SOP | Procedure | Focus Area |
+| :--- | :--- | :--- |
+| [SOP-001](docs/sop-001-mfa-reset.md) | Out-of-Band MFA Reset & Identity Verification | Identity & Access Management, Social Engineering Defense |
+| [SOP-002](docs/sop-002-vpn-diagnostics.md) | Remote End-User VPN Diagnostics & Tunnel Remediation | Remote Access, Networking |
+| [SOP-003](docs/sop-003-endpoint-isolation.md) | Suspected Endpoint Compromise & Triage Isolation | Security Incident Response |
+| [SOP-004](docs/sop-004-print-spooler.md) | Windows Print Spooler Crash Recovery & Driver Remediation | Windows Endpoint Support |
+
+Full index: [docs/index.md](docs/index.md)
+
+## Enterprise Active Directory Lab (corp.local)
 Virtualized enterprise Active Directory lab (corp.local) featuring Windows Server 2022 and Windows 11. Demonstrates automated OU hierarchy deployment, RBAC security groups, PowerShell administration, NTFS/SMB permissions, and verified negative access control.
 Built an enterprise Active Directory domain environment inside an isolated VirtualBox private NAT network (corp.local, 192.168.10.0/24) to simulate real-world IT Tier I/II systems administration and access governance.
 
