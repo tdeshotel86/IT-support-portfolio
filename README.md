@@ -172,8 +172,8 @@ Start-Process -FilePath "$env:SystemRoot\System32\ServerManager.exe" -WindowStyl
 
 ## Python Scripting & Developer Workstation Setup (SNHU IT 140)
 **Course:** IT 140 – Introduction to Scripting, Southern New Hampshire University  
-**Project:** Module Two – Software Development Introduction (Grade: 35/35)  
-**Stack:** Python 3.14 | Visual Studio Code | Git | GitHub CLI (`gh`) | Git Bash | PowerShell
+**Projects:** Module Two – Software Development Introduction (Grade: 35/35); Module Three – Program Design with Flowcharts and Pseudocode  
+**Stack:** Python 3.14 | Visual Studio Code | Draw.io | Git | GitHub CLI (`gh`) | Git Bash | PowerShell
 
 ### Project Summary
 Built a Python command-line program that collects user input, converts data types, and calculates a birth year from the system clock (`datetime.date.today().year`) instead of a hardcoded value, so the script stays accurate in any year. Followed the Software Development Life Cycle (analysis, design, construction, testing, debugging) with a documented module docstring, a `main()` entry point, and a `__name__ == "__main__"` guard. Source code is kept in a private course repository under SNHU academic integrity guidelines.
@@ -189,3 +189,20 @@ Built a Python command-line program that collects user input, converts data type
 * **Python Fundamentals:** User input, type conversion (`int()`), arithmetic, f-string output formatting, and use of the standard library.
 * **Developer Environment Administration:** CLI tool installation, PATH and shell troubleshooting, and IDE configuration on Windows.
 * **Git & GitHub Workflow:** Repository creation from templates, authentication, commits, pushes, and reading CI status.
+
+### Module Three: Program Design with Flowcharts and Pseudocode
+Planned a weekly paycheck calculator before writing code, following the analysis and design phases of the SDLC. The business rule: $20/hour for the first 40 hours and $30/hour for every hour above 40.
+
+* **Flowchart (Draw.io):** Modeled the program with standard flowchart symbols for start/end, preparation (constants), manual input, decision branching, processing, and display output.
+* **Pseudocode:** Wrote matching structured pseudocode using `START`/`END`, `GET`/`PUT`, `LET`, and `IF`/`ELSE`/`ENDIF`, with named constants instead of hardcoded values.
+* **Boundary Verification:** Traced the design against representative and boundary cases (20 hrs → $400, 40 hrs → $800, 41 hrs → $830, 60 hrs → $1,400) to confirm the overtime decision starts exactly above 40 hours.
+* **Design to Code:** Implemented the design in Python and passed the course's automated acceptance tests and GitHub Actions repository check.
+
+<details>
+<summary>📸 Flowchart</summary>
+
+<img width="600" alt="Paycheck calculator flowchart: hours worked are checked against 40, with separate regular-pay and overtime-pay calculations that join at the weekly paycheck output" src="docs/images/it140-paycheck-calculator-flowchart.png" />
+
+</details>
+
+*AI assistance (Anthropic's Claude) was used in developing this design and is acknowledged in the submitted coursework per SNHU's AI usage guidelines. Coursework files are kept in a private repository under SNHU academic integrity guidelines.*
